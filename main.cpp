@@ -51,7 +51,7 @@ int main()
 
 
 			ret = recvfrom(udpSocket, message, sizeof(message) - 1, 0, (SOCKADDR*)&fromAddr, &tolen);	// óM
-			cout << message << endl;
+			cout << message << endl;;
 			/*
 			o—Í
 			*/
