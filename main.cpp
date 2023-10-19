@@ -43,7 +43,7 @@ int main()
 			std::cout << "Input message:";
 			std::cin >> message;
 
-			int ret = sendto(udpSocket, message, MESSAGELENGTH, 0, (SOCKADDR*)&fromAddr, tolen);
+			int ret = sendto(udpSocket, message, strlen(message), 0, (SOCKADDR*)&fromAddr, tolen);
 			if (ret == SOCKET_ERROR)
 			{
 				cout << WSAGetLastError();
@@ -51,6 +51,7 @@ int main()
 
 
 			ret = recvfrom(udpSocket, message, sizeof(message) - 1, 0, (SOCKADDR*)&fromAddr, &tolen);	// ŽóM
+			message[ret] = '\0';
 			cout << message << endl;;
 			/*
 			o—Í
